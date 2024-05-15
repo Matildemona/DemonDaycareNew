@@ -1,0 +1,17 @@
+/*Grids fonts colors osv.*/
+:root {
+  --white: #eeedff;
+  --greyish: #8967cb;
+  --purple: #4d11c1;
+  --dark: #240a58;
+  --yellow: #ffa800;
+}
+
+body {
+  background-color: var(--white);
+  color: var(--dark);
+}
+
+a {
+  color: var(--purple);
+}

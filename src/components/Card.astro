@@ -1,9 +1,35 @@
 ---
-const {header, text} = Astro.props;
+const {header, src, alt, variant, href, color} = Astro.props;
 ---
-
-<h1>{header}</h1>
-<p>{text}</p>
+<a href={href}>
+<img class={variant} src={src} alt={alt}>
+<br>
+<h2 class={color}>{header}</h2>
 <slot></slot>
+</a>
 
-<style></style>
+<style>
+    img{
+        border-radius: 35px;
+    }
+    h2{
+        padding: 0 0px 40px 0px;
+        font-size: 2rem;
+        text-align: center;
+    }
+    .borderimg{
+        border: solid 10px var(--white);
+    }
+    .color_white{
+        color: var(--white);
+    }
+    .color_purple{
+        color:var(--purple);
+    }
+    .color_greyish{
+        color:var(--greyish);
+    }
+    .color_yellow{
+        color:var(--yellow);
+    }
+</style>

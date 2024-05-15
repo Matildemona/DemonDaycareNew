@@ -1,4 +1,41 @@
-/*Grids fonts colors osv.*/
+/*********** RESET ***********/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*********** FONT ***********/
+@font-face {
+  font-family: "poetsen";
+  src: url("/public/fonts/poetsenone-regular-webfont.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.fonts {
+  font-family: "poetsen", sans-serif;
+}
+
+/*********** STYLE ***********/
+main {
+  /* max-width: 1200px; */
+  margin-inline: auto;
+}
+
+body {
+  background-color: var(--purple);
+  color: var(--white);
+  font-family: "poetsen", sans-serif, "Gill Sans";
+}
+
+/*********** COLORS ***********/
 :root {
   --white: #eeedff;
   --greyish: #8967cb;
@@ -7,11 +44,116 @@
   --yellow: #ffa800;
 }
 
-body {
-  background-color: var(--white);
-  color: var(--dark);
+/*********** TEXT ***********/
+p {
+  font-family: "archivo", sans-serif, "Gill Sans";
+  font-size: 1rem;
+  line-height: 180%;
+}
+h1 {
+  font-family: "poetsen", sans-serif, "Gill Sans";
+  font-weight: 500;
+  font-size: 4rem;
+}
+h2 {
+  font-size: 2rem;
+  font-family: "poetsen", sans-serif, "Gill Sans";
+}
+h3 {
+  font-size: 1.8rem;
+  font-family: "archivo", sans-serif, "Gill Sans";
+  font-weight: 500;
+}
+button {
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+a {
+  text-decoration: none;
 }
 
-a {
+@media (max-width: 1100px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1rem;
+  }
+  h3 {
+    font-size: 1rem;
+  }
+}
+/*********** VIDEO ***********/
+/* #hero {
+  height: 20%;
+  width: 100vh;
+} */
+#hero video {
+  width: 100%;
+  height: 90vh;
+  position: absolute;
+  z-index: 5;
+  object-fit: cover;
+}
+.landingpage_text {
+  position: relative;
+  margin-top: 17vh;
+  z-index: 20;
+}
+#space_for_hero {
+  height: 53vh;
+}
+
+@media (max-width: 1100px) {
+  #hero video {
+    width: 100%;
+    height: 50vh;
+  }
+  #space_for_hero {
+    height: 32vh;
+  }
+  .landingpage_text {
+    position: relative;
+    margin-top: 7vh;
+    z-index: 20;
+  }
+}
+
+/*********** DIV ***********/
+@media (min-width: 1100px) {
+  .card_flex {
+    display: flex;
+    flex-direction: row;
+    margin-inline: auto;
+    gap: 30px;
+    margin-block: 5vw;
+    align-items: center;
+    max-width: 1200px;
+    text-align: center;
+  }
+}
+.horizontal_3 {
+  display: flex;
+  flex-direction: row;
+  margin-inline: auto;
+  gap: 40px;
+  align-items: center;
+  margin-block: 2vw;
+}
+
+.flex_vertical {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#values_div {
+  padding: 20px 0 20px 0;
+  background-color: var(--white);
   color: var(--purple);
+}
+
+.card_flex {
+  padding: 0px 40px 0px 40px;
 }

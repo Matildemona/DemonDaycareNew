@@ -1,29 +1,37 @@
 ---
 import "../style.css";
-import Header from "../components/Header.astro"
+import LandingpageHeader from "../components/LandingpageHeader.astro";
 import Card from "../components/Card.astro"
 import Button from "../components/Button.astro"
+import MainLayout from "../layouts/MainLayout.astro";
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<Header>
-
-		</Header>
-		<Card header="Neko Sake Showdown" text="iamdesxdirtping thimsf.">
-			<img src="logo_new.png" alt="">
-			<Button variant="primary">Primary</Button>
-			<Button variant="secondary">Secondary</Button>
-		</Card>
-
-	
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout title="Demon Daycare">
+	<LandingpageHeader/>
+	<main>
+		<div id="space_for_hero"></div>
+		<div class="card_flex">
+			<div>		
+				<Card href="#" color="color_white" header="Neko Sake Showdown" src="../../logo_new.png" alt="Neko Sake Showdown" variant="borderimg"/>
+			</div>
+			<div>
+				<Card href="#" color="color_white" header="Caffeine Crisis" src="../../logo_new.png" alt="Caffeine Crisis" variant="borderimg"/>
+			</div>
+			<div>		
+				<Card href="#" color="color_white" header="Halloween Home" src="../../logo_new.png" alt="Halloween Home" variant="borderimg" />
+			</div>
+		</div>
+		<div id="values_div">
+			<div class="card_flex">
+				<div>		
+					<Card color="color_greyish" header="Cozy" src="../../logo_new.png" alt="Cozy"/>
+				</div>
+				<div>
+					<Card color="color_yellow" header="Whimsical" src="../../logo_new.png" alt="Whimsical"/>
+				</div>
+				<div>		
+					<Card color="color_purple" header="Demonic" src="../../logo_new.png" alt="Demonic" />
+				</div>
+			</div>
+		</div>
+	</main>
+	</MainLayout>

@@ -1,0 +1,198 @@
+---
+import "../style.css";
+import Button from "../components/Button.astro";
+---
+
+<footer>
+  <div class="grid_footer">
+    <div></div>
+    <div>
+      <h2>Contact</h2>
+      <p>Copenhagen, Denmark</p>
+      <p>Demondaycare@gmail.com</p>
+      <p>VAT: 44003074</p>
+    </div>
+    <div>
+      <h2>Navigation</h2>
+      <p><a href="/">Home</a></p>
+      <p><a href="/">Neko Sake Showdown</a></p>
+      <p><a href="/">Caffeine Crisis</a></p>
+      <p><a href="/">Halloween Home</a></p>
+      <p><a href="/">Contact</a></p>
+    </div>
+
+    <div class="grid_social_links">
+        <div>
+            <h2>Social Links</h2>
+            <div>
+                <a style="margin-right: 10px" href="#" target="”_blank”">
+                  <img
+                    class="some_logo"
+                    src="/svg/some_instagram.svg"
+                    alt="instagram"
+                  /></a>
+                <a
+                  href="#"
+                  target="”_blank”">
+                  <img class="some_logo" src="/svg/some_instagram.svg" alt="instagram" /></a>
+                  <div class="input">
+            </div>
+                    <input type="text" placeholder="*Email" />
+                  </div>
+        </div>
+      <div class="footer_knap">
+        <Button text="Sign Up" variant="small"/>
+      </div>
+    </div>
+    
+    <div>
+      <img
+        class="footer_man_size"
+        src="/BirdClicked.png"
+        alt="Demon Daycare Maskot"
+      />
+    </div>
+    <div></div>
+</div>
+<p class="copyright">© Copyright 2024 Demon Daycare. All rights reserved.</p>
+
+  <style>
+    footer {
+      margin-top: 20px;
+      background-color: var(--purple);
+      color: var(--white);
+
+    }
+    .grid_social_links{
+        display: grid;
+        grid-column: 2fr 1fr;
+    }
+    .grid_footer{
+        display: flex;
+        -ms-flex-align: center;
+        margin-left: 10px;
+        gap: 40px;  
+    }
+    .grid_tilmeld_mail {
+      text-align: left;
+    }
+    .footer_knap{
+
+    }
+
+    .åbningstider_margin {
+      margin-top: 40px;
+      text-align: left;
+    }
+    .some_logo {
+      aspect-ratio: 1/1;
+      width: 10%;
+      height: 10%;
+      display: inline;
+    }
+    h2 {
+      margin-bottom: 10px;
+      margin-top: 50px;
+    }
+    .footer_man_size {
+        aspect-ratio: 1/1;
+    }
+    a {
+      text-decoration: none;
+      color: var(--blue);
+    }
+    .copyright{
+        text-align: center;
+        padding: 40px 0px 20px 0px;
+    }
+
+    /*********** INPUT ***********/
+    input {
+      border-radius: 50px;
+      border: none;
+      height: 30px;
+      font-family: "archivo", sans-serif;
+      font-size: 1rem;
+      color: var(--greyish);
+      background-color: var(--white);
+      margin-top: 20px;
+      margin-left: -103px;
+      padding-left: 10px;
+    }
+
+    hr {
+      width: 63%;
+      margin-left: 88px;
+    }
+    input:focus {
+      outline: none;
+    }
+
+    input::placeholder {
+      color: var(--greyish);
+      font-family: "archivo", sans-serif;
+      font-size: 1rem;
+    }
+    /*********** MEDIA QUERY ***********/
+    @media (min-width: 1100px) {
+      /*********** GRID ***********/
+      .grid_footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 2fr 1fr 1fr;
+        margin-left: 0px;
+      }
+      .textalign_left {
+        text-align: left;
+        margin-left: 40px;
+      }
+      .textalign_center h2 {
+        text-align: left;
+      }
+      .grid_tilmeld_mail {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        margin-left: 40px;
+        gap: 20px;
+        padding-left: 70px;
+      }
+      .grid_tilmeld_mail h2 {
+        float: left;
+        grid-column: 1/2;
+        grid-row: 1/2;
+      }
+      .footer_knap {
+        margin-top: 20px;
+        margin-left: 0px;
+      }
+      /*********** SIZE ***********/
+
+      .some_logo {
+        aspect-ratio: 1/1;
+        width: 10%;
+        height: 10%;
+        display: inline;
+      }
+      .åbningstider_margin,
+      .tilmeld_margin {
+        margin-top: 0;
+      }
+      .footer_man_size {
+        width: 100%;
+        float: right;
+      }
+      .grid_tilmeld_mail {
+        text-align: left;
+      }
+
+      input {
+        margin-left: 0;
+        width: 300px;
+      }
+      hr {
+        width: 90%;
+        margin-left: 0;
+      }
+    }
+  </style>
+</footer>

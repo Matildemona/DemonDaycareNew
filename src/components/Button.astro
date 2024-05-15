@@ -1,19 +1,38 @@
 ---
-const {variant} = Astro.props;
+const { text, href, variant } = Astro.props;
 ---
 
-<button class={variant}><slot/></button>
+<a class={variant + " " + "knap"} href={href}>
+  {text}
+</a>
+
+<!-- 
+Skal tilføjes sådan: <Button text="knapText" href="LinkTilKnap" /> 
+-->
 
 <style>
-    button{
-        padding: 1rem;
-    }
-    .primary {
-        background-color: red;
-        color: white;
-    }
-    .secondary {
-        background-color: blue;
-        color: white;
-    }
+  .knap {
+    padding: 15px 60px 15px 60px;
+    border: solid;
+    border-color: var(--white);
+    border-radius: 50px;
+    background-color: var(--white);
+    color: var(--purple);
+    font-size: 3rem;
+    text-decoration: none;
+    font-family: "poetsen", sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .knap:hover {
+    background-color: var(--greyish);
+    color: var(--white);
+    border-color: var(--greyish);
+    cursor: pointer;
+  }
+  .small{
+    padding: 2px 8px 2px 8px;
+    font-size: 1rem;
+  }
 </style>

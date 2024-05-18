@@ -6,8 +6,16 @@ import Button from "../components/Button.astro"
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 <MainLayout title="Demon Daycare">
-	<LandingpageHeader variant="landingpage_spacer" src="/public/DemonDaycareHero.mp4" header="Embark On Whimsical Adventures" text="Demon Daycare is an indie game studio dedicated to crafting"  text2="whimsical, silly and mischievous experiences."/>
-		<main>
+	<LandingpageHeader variant="landingpage_spacer" src="/public/DemonDaycareHero.mp4" header="Embark On Whimsical Adventures" text="Demon Daycare is an indie game studio dedicated to crafting"  text2="whimsical, silly and mischievous experiences.">
+		<div class="flex_arrow">
+			<div></div>
+			<div>
+				<a href="#main"><img class="arrowdown" src="/public/svg/white_arrow.svg" alt="arrow down"></a>
+			</div>
+			<div></div>
+		</div>
+	</LandingpageHeader>
+		<main id="main">
 		<div id="space_for_hero"></div>
 		<div class="card_flex">
 			<div>		
@@ -57,5 +65,9 @@ import MainLayout from "../layouts/MainLayout.astro";
 		}
 		.values_size{
 			width: 400px;
+		}
+		.flex_arrow{
+			display: flex;
+			justify-content: center;
 		}
 	</style>

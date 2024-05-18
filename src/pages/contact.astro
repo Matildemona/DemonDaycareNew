@@ -31,7 +31,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 							<img class="some_logo" src="/svg/some_itch.svg" alt="instagram" /></a>
 					</div>
 			</div>
-			<div>
+			<div class="space_mobile">
 				<img src="public/webp/demon_round.webp" alt="">
 			</div>
 			<div></div>
@@ -39,15 +39,20 @@ import MainLayout from "../layouts/MainLayout.astro";
 	</LandingpageHeader>
 	<main>
 		<div id="space_for_hero_contact"></div>
-
 	</main>
 </MainLayout>
 
 <style>
 	.grid_5{
-	display: grid;
-	grid-template-columns:  1fr 1fr 1fr 1fr;
+	display: flex;
+	flex-direction: column;
 	text-align: left;
+	padding-left: 40px;
+	padding-right: 40px;
+	margin-top: 40px;
+}
+.space_mobile{
+	margin-top: 40px;
 }
 	.some_logo{
 	display: inline;
@@ -59,4 +64,16 @@ p{
 #space_for_hero_contact{
 margin-top: 20vh;
 }
+
+@media (min-width: 1100px) {
+	.grid_5{
+	display: grid;
+	grid-template-columns:  1fr 1fr 1fr 1fr;
+	text-align: left;
+}
+.space_mobile{
+	margin-top: 0px;
+}
+}
+
 </style>

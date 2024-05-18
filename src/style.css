@@ -85,31 +85,32 @@ a {
   }
 }
 /*********** VIDEO ***********/
-/* #hero {
-  height: 20%;
-  width: 100vh;
-} */
+.no_click {
+  pointer-events: none;
+}
 #hero video {
   width: 100%;
-  height: 95vh;
+  height: 100vh;
   position: absolute;
   z-index: 5;
   object-fit: cover;
 }
 #hero img {
   width: 100%;
-  height: 95vh;
+  height: 100vh;
   position: absolute;
   z-index: 4;
   object-fit: cover;
 }
 .landingpage_text {
   position: relative;
-  /* margin-top: 17vh; */
   z-index: 20;
 }
 #space_for_hero {
   height: 43vh;
+}
+.spacer {
+  margin-top: 20vh;
 }
 .arrowdown {
   width: 60px;
@@ -120,10 +121,12 @@ a {
   #hero video {
     width: 100%;
     height: 50vh;
+    pointer-events: none;
   }
   #hero img {
     width: 100%;
     height: 46vh;
+    pointer-events: none;
   }
   .arrowdown {
     width: 40px;

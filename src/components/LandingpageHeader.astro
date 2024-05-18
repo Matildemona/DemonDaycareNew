@@ -14,27 +14,36 @@ const {src, header, text, text2, imgsrc, imgalt, variant} = Astro.props;
     </div>
     <div id="header_indhold">
         <div>
-            <a href="/"><img id="logo" src="/Logo_Badge_new.png" alt="Demon Daycare Logo" /></a>
+            <a href="/"><img id="logo" src="/Logo_Badge_new.png" alt="Demon Daycare Logo"/>
         </div>
         <div></div>
         <div>
-            <nav>
-                <ul>
-                    <li><a class="a_underline" href="/">Home</a></li>
-                <li><a class="a_underline" href="/contact">Contact</a></li>
-                </ul>
-            </nav>
+          <div class="off-screen-menu">
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </div>
+      
+          <nav>
+            <div class="ham-menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </nav>
+      
         </div>
     </div>
 <br>
     <div class={`flex_vertical landingpage_text ${variant}`}>
-        <h1>{header}</h1>
+        <h1 class="landingpage_spacer">{header}</h1>
         <h3 class="text_spacer">{text}</h3>
         <h3 class="text_spacer">{text2}</h3>
-            <slot/>
+            <slot />
         </div>
 </header>
-
+<!-- BURGER MENU NY -->
   <style>
     #header_indhold {
       padding: 10px;
@@ -44,13 +53,15 @@ const {src, header, text, text2, imgsrc, imgalt, variant} = Astro.props;
       position: relative;
       z-index: 20;
     }
+    .landingpage_spacer{
+      margin-top: 10vh;
+    }
     header {
       position: relative;
     }
     ul {
-      display: flex;
-      justify-self: end;
-      margin-left: auto;
+      margin-right: 20px;
+      text-align: left;
     }
     li {
       list-style: none;
@@ -112,10 +123,7 @@ const {src, header, text, text2, imgsrc, imgalt, variant} = Astro.props;
     .dropcontainer:hover .dropcontent {
       display: block;
     }
-  
-    .landingpage_spacer{
-        margin-top: 17vh;
-    }
+
     /*********** MEDIA QUERY ***********/
     @media (max-width: 1100px) {
       .dropcontent {
@@ -123,8 +131,9 @@ const {src, header, text, text2, imgsrc, imgalt, variant} = Astro.props;
     right: -100%; /* Adjust the distance from the parent */
       }
       .landingpage_spacer{
-        margin-top: 5vh;
+      margin-top: 5vh;
     }
+
     }
     @media (min-width: 1100px) {
       .dropcontent {
@@ -141,6 +150,99 @@ const {src, header, text, text2, imgsrc, imgalt, variant} = Astro.props;
       }
     }
   </style>
+
+  <style>
+    a {
+    color: white;
+    z-index: 21;
+}
+a:visited {
+    color: white;
+}
+a:hover {
+    color: var(--yellow);
+}
+
+/* off-screen-menu */
+.off-screen-menu{
+    max-width: 100px;
+    position: fixed;
+    right: -100px;
+    display: flex;
+    top:  20px;
+    flex-direction: column;
+    transition: .3s ease;
+}
+
+.off-screen-menu.active {
+    top: 20px;
+    right: 80px;
+}
+
+/* nav */
+nav {
+    padding: 1rem;
+    display: flex;
+}
+
+
+/* ham menu */
+.ham-menu {
+    height: 50px;
+    width: 40px;
+    margin-left: auto;
+    position: relative;
+    cursor: pointer;
+}
+.ham-menu span {
+    height: 5px;
+    width: 100%;
+    background-color: white;
+    border-radius: 25px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+}
+.ham-menu span:nth-child(1) {
+    top: 25%;
+}
+.ham-menu span:nth-child(3) {
+    top: 75%;
+}
+.ham-menu.active span {
+    background-color: white;
+}
+.ham-menu.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.ham-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+.ham-menu.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+@media (min-width: 1100px) {
+.off-screen-menu{
+    max-width: 100px;
+    position: fixed;
+    right: -450px;
+    display: flex;
+    top: 135px;
+    flex-direction: column;
+    transition: .3s ease;
+}
+
+.off-screen-menu.active {
+    top: 135px;
+    right: 55px;
+}
+}
+  </style>
   
   <!-- BURGER MENU -->
-  <script src="../js/menu.js"></script>
+  <script src="../js/burger.js"></script>

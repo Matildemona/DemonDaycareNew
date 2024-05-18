@@ -1,0 +1,65 @@
+---
+import "../style.css";
+import LandingpageHeader from "../components/LandingpageHeader.astro";
+import Card from "../components/Card.astro"
+import Button from "../components/Button.astro"
+import MainLayout from "../layouts/MainLayout.astro";
+import GameCard from "../components/GameCard.astro";
+---
+
+<MainLayout title="Neko Sake Showdown" backgroundcolor="var(--white)">
+	<LandingpageHeader imgsrc="/public/webp/nekosake/nekosake_bg.webp" >
+
+	<div class="grid_5">
+		<div></div>
+		<div><img src="/public/webp/nekosake/neko.webp" alt=""></div>
+		<div>
+			<img src="/public/webp/nekosake/nekosake_logo.webp" alt="">
+			<br><br>
+			<Button variant="nekosake" text="Play" href="https://777xarina777.itch.io/nekosakeshowdown" target="_blank"></Button>
+			<div class="flex_arrow">
+				<div></div>
+				<div>
+					<a href="#main"><img class="arrowdown" src="/public/svg/neko_arrow.svg" alt="arrow down"></a>
+				</div>
+				<div></div>
+			</div>
+			
+			
+		</div>
+		<div><img src="/public/webp/nekosake/sake.webp" alt=""></div>
+		<div></div>
+	</div>
+	</LandingpageHeader>
+	<main id="main">
+        <GameCard src1="/public/webp/nekosake/nekosake1.webp" src2="/public/webp/nekosake/nekosake2.webp" src3="/public/webp/nekosake/nekosake4.webp" src4="/public/webp/nekosake/nekosake3.webp" header="Neko Sake Showdown" text="Armed with your legendary salmon cannon, you're pitted against a horde of relentless robot-punchbags! Will you claw your way to victory and be the next cool cat champion? Only one way to find out... Let the Neko Sake Showdown begin!">
+			<div class="button_grid">
+				<div></div>
+				<div><Button variant="games" text="Play" href="https://777xarina777.itch.io/nekosakeshowdown" target="_blank"></Button>
+				</div>
+				<div></div>
+			</div>
+        </GameCard>
+	</main>
+</MainLayout>
+
+<style>
+.grid_5{
+	display: grid;
+	grid-template-columns:  1fr 2fr 4fr 2fr 1fr;
+}
+.flex_arrow{
+	display: flex;
+	justify-content: center;
+}
+@media (max-width: 1100px){
+	.button_grid{
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;;
+	}
+	.grid_5{
+	display: grid;
+	grid-template-columns:  1fr 3fr 6fr 3fr 1fr;
+}
+}
+</style>

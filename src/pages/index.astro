@@ -6,32 +6,56 @@ import Button from "../components/Button.astro"
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 <MainLayout title="Demon Daycare">
-	<LandingpageHeader/>
-	<main>
+	<LandingpageHeader variant="landingpage_spacer" src="/public/DemonDaycareHero.mp4" header="Embark On Whimsical Adventures" text="Demon Daycare is an indie game studio dedicated to crafting"  text2="whimsical, silly and mischievous experiences."/>
+		<main>
 		<div id="space_for_hero"></div>
 		<div class="card_flex">
 			<div>		
-				<Card href="#" color="color_white" header="Neko Sake Showdown" src="../../logo_new.png" alt="Neko Sake Showdown" variant="borderimg"/>
+				<Card href="/neko_sake_showdown" color="color_white" header="Neko Sake Showdown" src="public/webp/nekosake/nekosake1.webp" alt="Neko Sake Showdown" variant="borderimg"/>
 			</div>
 			<div>
-				<Card href="#" color="color_white" header="Caffeine Crisis" src="../../logo_new.png" alt="Caffeine Crisis" variant="borderimg"/>
+				<Card href="/caffeine_crisis" color="color_white" header="Caffeine Crisis" src="public/webp/caffeine/caffeine1.webp" alt="Caffeine Crisis" variant="borderimg"/>
 			</div>
 			<div>		
-				<Card href="#" color="color_white" header="Halloween Home" src="../../logo_new.png" alt="Halloween Home" variant="borderimg" />
+				<Card href="/halloween_home" color="color_white" header="Halloween Home" src="public/webp/halloween/halloween1.webp" alt="Halloween Home" variant="borderimg" />
 			</div>
 		</div>
 		<div id="values_div">
-			<div class="card_flex">
+			<div class="values_grid">
 				<div>		
-					<Card color="color_greyish" header="Cozy" src="../../logo_new.png" alt="Cozy"/>
+					<Card class="values_size"  color="color_greyish" header="Cozy" src="public/webp/square_frog.webp" alt="Cozy">
+					<p class="greyish">For when you need a virtual hug and a hot cup of cocoa.</p>
+					</Card>
 				</div>
 				<div>
-					<Card color="color_yellow" header="Whimsical" src="../../logo_new.png" alt="Whimsical"/>
+					<Card class="values_size"  color="color_yellow" header="Whimsical" src="public/webp/square_neko.webp" alt="Whimsical">
+					<p class="yellow">When you want to unleash your inner whimsy and embrace the wackiness.</p>
+					</Card>
 				</div>
 				<div>		
-					<Card color="color_purple" header="Demonic" src="../../logo_new.png" alt="Demonic" />
+					<Card class="values_size" color="color_purple" header="Demonic" src="public/webp/square_demon.webp" alt="Demonic">
+					<p>For when you crave chaos, and mischievous companionship.</p>
+					</Card>
 				</div>
 			</div>
 		</div>
 	</main>
 	</MainLayout>
+
+	<style>
+		p{
+			font-size: 1.5rem;
+			font-weight: 500;
+			line-height: 120%;
+			text-align: center;
+		}
+		.greyish{
+			color: var(--greyish);
+		}
+		.yellow{
+			color:var(--yellow)
+		}
+		.values_size{
+			width: 400px;
+		}
+	</style>

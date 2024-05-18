@@ -15,29 +15,29 @@ import Button from "../components/Button.astro";
     <div>
       <h2>Navigation</h2>
       <p><a href="/">Home</a></p>
-      <p><a href="/">Neko Sake Showdown</a></p>
-      <p><a href="/">Caffeine Crisis</a></p>
-      <p><a href="/">Halloween Home</a></p>
-      <p><a href="/">Contact</a></p>
+      <p><a href="/neko_sake_showdown">Neko Sake Showdown</a></p>
+      <p><a href="/caffeine_crisis">Caffeine Crisis</a></p>
+      <p><a href="/halloween_home">Halloween Home</a></p>
+      <p><a href="/contact">Contact</a></p>
     </div>
 
     <div class="grid_social_links">
         <div>
             <h2>Social Links</h2>
             <div>
-                <a style="margin-right: 10px" href="#" target="”_blank”">
+                <a style="margin-right: 10px" href="https://www.instagram.com/matildemona.exe/" target="”_blank”">
                   <img
                     class="some_logo"
-                    src="/svg/some_instagram.svg"
+                    src="/svg/some_instagram_white.svg"
                     alt="instagram"
                   /></a>
                 <a
-                  href="#"
+                  href="https://matildemona.itch.io/"
                   target="”_blank”">
-                  <img class="some_logo" src="/svg/some_instagram.svg" alt="instagram" /></a>
+                  <img class="some_logo" src="/svg/some_itch.svg" alt="instagram" /></a>
                   <div class="input">
             </div>
-                    <input type="text" placeholder="*Email" />
+                    <input type="text" placeholder="Join our newsletter!" />
                   </div>
         </div>
       <div class="footer_knap">
@@ -69,15 +69,15 @@ import Button from "../components/Button.astro";
     }
     .grid_footer{
         display: flex;
-        -ms-flex-align: center;
+        flex-direction: column;
+        justify-content:center;
+        align-items: top;
         margin-left: 10px;
-        gap: 40px;  
+        gap: 10px;
+        text-align: center;
     }
     .grid_tilmeld_mail {
       text-align: left;
-    }
-    .footer_knap{
-
     }
 
     .åbningstider_margin {
@@ -86,8 +86,8 @@ import Button from "../components/Button.astro";
     }
     .some_logo {
       aspect-ratio: 1/1;
-      width: 10%;
-      height: 10%;
+      width: 14%;
+      height: 14%;
       display: inline;
     }
     h2 {
@@ -99,7 +99,10 @@ import Button from "../components/Button.astro";
     }
     a {
       text-decoration: none;
-      color: var(--blue);
+      color: white;
+    }
+    a:hover{
+      color: var(--yellow);
     }
     .copyright{
         text-align: center;
@@ -113,11 +116,12 @@ import Button from "../components/Button.astro";
       height: 30px;
       font-family: "archivo", sans-serif;
       font-size: 1rem;
-      color: var(--greyish);
+      color: var(--purple);
       background-color: var(--white);
       margin-top: 20px;
-      margin-left: -103px;
       padding-left: 10px;
+      margin-left: 0;
+      width: 300px;
     }
 
     hr {
@@ -127,6 +131,10 @@ import Button from "../components/Button.astro";
     input:focus {
       outline: none;
     }
+    .footer_knap {
+        margin-top: 20px;
+        margin-left: 0px;
+      }
 
     input::placeholder {
       color: var(--greyish);
@@ -137,10 +145,13 @@ import Button from "../components/Button.astro";
     @media (min-width: 1100px) {
       /*********** GRID ***********/
       .grid_footer {
-        display: grid;
+        display:grid;
         grid-template-columns: 1fr 1fr 1fr 2fr 1fr 1fr;
         margin-left: 0px;
+        text-align: left;
+        gap: 40px;
       }
+
       .textalign_left {
         text-align: left;
         margin-left: 40px;

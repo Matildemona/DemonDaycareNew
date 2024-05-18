@@ -1,0 +1,77 @@
+---
+const {header, text, src1, src2, src3, src4} = Astro.props;
+---
+<div class="card_flex">
+    <div></div>
+    <div class="flex_horizontal">
+        <div class="flex_vertical">
+            <div><img src={src1} alt=""></div>
+            <div class="img_grid">
+                <div><img src={src2} alt=""></div>
+                <div><img src={src3} alt=""></div>
+                <div><img src={src4} alt=""></div>
+            </div>
+        </div>
+        <div class="text_grid">
+            <div>
+                <h1>{header}</h1>
+                <br>
+                <p>{text}</p>
+            </div>
+            <div>
+                <slot/>
+            </div>
+        </div>
+    </div>
+    <div></div>
+</div>
+
+<style>
+.flex_horizontal{
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 140px;
+margin-top: 40px;
+
+}
+.flex_vertical{
+display: flex;
+flex-direction: column;
+}
+
+.img_grid{
+    display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+gap: 20px;
+margin-top: 20px;
+}
+.text_grid{
+    display: grid;
+grid-template-rows: 3fr 1fr;
+}
+
+h1{
+    text-align: left;
+    font-size: 2.8rem;
+    color: var(--dark);
+}
+
+p{
+    text-align: left;
+    font-size: 1.6rem;
+    color: var(--dark);
+}
+
+@media (max-width: 1100px){
+    .flex_horizontal,
+    .text_grid{
+        display: flex;
+        flex-direction: column;
+        gap:40px;
+    }
+    .flex_horizontal{
+        margin-top: 65px;
+    }
+}
+
+</style>

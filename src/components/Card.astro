@@ -1,25 +1,41 @@
 ---
 const {header, src, alt, variant, href, color} = Astro.props;
 ---
-<a href={href}>
-<img class={variant} src={src} alt={alt}>
-<br>
-<h2 class={color}>{header}</h2>
-<slot></slot>
-</a>
+<div class="card_div">
+    <a href={href}>
+        <img class={variant} src={src} alt={alt}>
+        <div class="card_spacer_top"></div>
+        <h2 class={color}>{header}</h2>
+        <slot></slot>
+        <div class="card_spacer"></div>
+    </a>
+</div>
 
 <style>
+    .card_spacer{
+        margin-top: 40px;
+    }
+    .card_spacer_top{
+        margin-top: 15px;
+    }
     img{
         border-radius: 35px;
     }
     h2{
-        padding: 0 0px 40px 0px;
+        padding: 0 0px 0px 0px;
         font-size: 2rem;
         text-align: center;
     }
     .borderimg{
-        border: solid 10px var(--white);
+        border: solid 15px var(--white);
     }
+    .card_div:hover .borderimg {
+        border: solid 15px var(--greyish);
+    }
+    .card_div:hover .color_white{
+        color: var(--greyish);
+    }
+
     .color_white{
         color: var(--white);
     }

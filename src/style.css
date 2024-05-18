@@ -48,7 +48,7 @@ body {
 p {
   font-family: "archivo", sans-serif, "Gill Sans";
   font-size: 1rem;
-  line-height: 180%;
+  line-height: 150%;
 }
 h1 {
   font-family: "poetsen", sans-serif, "Gill Sans";
@@ -78,7 +78,7 @@ a {
     font-size: 2rem;
   }
   h2 {
-    font-size: 1rem;
+    font-size: 1.6rem;
   }
   h3 {
     font-size: 1rem;
@@ -91,18 +91,29 @@ a {
 } */
 #hero video {
   width: 100%;
-  height: 90vh;
+  height: 95vh;
   position: absolute;
   z-index: 5;
   object-fit: cover;
 }
+#hero img {
+  width: 100%;
+  height: 95vh;
+  position: absolute;
+  z-index: 4;
+  object-fit: cover;
+}
 .landingpage_text {
   position: relative;
-  margin-top: 17vh;
+  /* margin-top: 17vh; */
   z-index: 20;
 }
 #space_for_hero {
-  height: 53vh;
+  height: 43vh;
+}
+.arrowdown {
+  width: 60px;
+  margin-top: 40px;
 }
 
 @media (max-width: 1100px) {
@@ -110,14 +121,27 @@ a {
     width: 100%;
     height: 50vh;
   }
+  #hero img {
+    width: 100%;
+    height: 46vh;
+  }
+  .arrowdown {
+    width: 40px;
+    margin-top: 40px;
+  }
   #space_for_hero {
     height: 32vh;
   }
   .landingpage_text {
     position: relative;
-    margin-top: 7vh;
+    margin-top: 0px;
     z-index: 20;
   }
+}
+
+/*********** ARROW SCROLLER ***********/
+html {
+  scroll-behavior: smooth;
 }
 
 /*********** DIV ***********/
@@ -128,7 +152,15 @@ a {
     margin-inline: auto;
     gap: 30px;
     margin-block: 5vw;
-    align-items: center;
+    max-width: 1200px;
+    text-align: center;
+  }
+  .values_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-inline: auto;
+    gap: 30px;
+    margin-block: 5vw;
     max-width: 1200px;
     text-align: center;
   }
@@ -154,6 +186,7 @@ a {
   color: var(--purple);
 }
 
-.card_flex {
+.card_flex,
+.values_grid {
   padding: 0px 40px 0px 40px;
 }

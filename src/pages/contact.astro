@@ -1,17 +1,62 @@
 ---
 import "../style.css";
-import Header from "../components/Header.astro"
+import LandingpageHeader from "../components/LandingpageHeader.astro";
 import Card from "../components/Card.astro"
 import Button from "../components/Button.astro"
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <MainLayout title="Contact">
-	<Header/>
+	<LandingpageHeader imgsrc="contact_hero.png" alt="tag" header=" " text=" ">
+		<div class="grid_5">
+			<div></div>
+			<div>
+				<h1>Get In Touch!</h1>
+				<p>Don’t be afraid to reach out - <br>
+					we don’t bite! 👀</p>
+					<br>
+					<p>DemonDaycareGames@gmail.com</p>
+					<br>
+					<p>Check up on your demons!</p>
+					<div class="flex_some">
+						<a style="margin-right: 10px" href="https://www.instagram.com/matildemona.exe/" target="”_blank”">
+							<img
+							class="some_logo"
+							src="/svg/some_instagram_white.svg"
+							alt="instagram"
+							/></a>
+							<a
+							href="https://matildemona.itch.io/"
+							target="”_blank”">
+							<img class="some_logo" src="/svg/some_itch.svg" alt="instagram" /></a>
+					</div>
+			</div>
+			<div>
+				<img src="public/webp/demon_round.webp" alt="">
+			</div>
+			<div></div>
+		</div>
+	</LandingpageHeader>
 	<main>
-		<Card header="HalloweenHome" text="iamdesxdirtping thimsf.">
-		<img src="banner.png" alt="">
-		<Button variant="primary">Primary</Button>
-			</Card>
+		<div id="space_for_hero_contact"></div>
+
 	</main>
 </MainLayout>
+
+<style>
+	.grid_5{
+	display: grid;
+	grid-template-columns:  1fr 1fr 1fr 1fr;
+	text-align: left;
+}
+	.some_logo{
+	display: inline;
+	width: 12%;
+}
+p{
+	font-size: 1.5rem;
+}
+#space_for_hero_contact{
+margin-top: 20vh;
+}
+</style>

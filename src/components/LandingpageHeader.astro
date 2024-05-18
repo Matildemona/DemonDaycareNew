@@ -1,14 +1,15 @@
 ---
 import "../style.css"
-
+const {src, header, text, text2, imgsrc, imgalt, variant} = Astro.props;
 ---
 
 <header>
     <div id="hero">
         <video autoplay muted loop preload="auto">
-          <source src="/public/DemonDaycareHero.mp4" type="video/webm" />
+          <source src={src} type="video/webm" />
           Your browser does not support the video tag.
         </video>
+        <img src={imgsrc} alt={imgalt}>
         
     </div>
     <div id="header_indhold">
@@ -26,10 +27,11 @@ import "../style.css"
         </div>
     </div>
 <br>
-    <div class="landingpage_text flex_vertical">
-        <h1>Embark On Whimsical Adventures</h1>
-        <h3>At Demon Daycare we strive to spark joy, curiosity, <br>
-            and a touch of mischief in every demon.</h3>
+    <div class={`flex_vertical landingpage_text ${variant}`}>
+        <h1>{header}</h1>
+        <h3 class="text_spacer">{text}</h3>
+        <h3 class="text_spacer">{text2}</h3>
+            <slot/>
         </div>
 </header>
 
@@ -53,6 +55,9 @@ import "../style.css"
     li {
       list-style: none;
     }
+    .text_spacer{
+      margin-top: 5px;
+    }
     #logo,
     nav {
       flex: 1;
@@ -66,7 +71,7 @@ import "../style.css"
     }
     a {
       text-decoration: none;
-      color: var(--blue);
+      color: white;
       font-size: 1.5rem;
     }
     .a_underline:hover {
@@ -108,17 +113,24 @@ import "../style.css"
       display: block;
     }
   
+    .landingpage_spacer{
+        margin-top: 17vh;
+    }
     /*********** MEDIA QUERY ***********/
     @media (max-width: 1100px) {
       .dropcontent {
         left: auto;
     right: -100%; /* Adjust the distance from the parent */
       }
+      .landingpage_spacer{
+        margin-top: 5vh;
+    }
     }
     @media (min-width: 1100px) {
       .dropcontent {
         margin-left: -45px;
       }
+
       #header_indhold {
         padding: 30px 90px 30px 90px;
       }

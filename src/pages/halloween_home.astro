@@ -1,0 +1,65 @@
+---
+import "../style.css";
+import LandingpageHeader from "../components/LandingpageHeader.astro";
+import Card from "../components/Card.astro"
+import Button from "../components/Button.astro"
+import MainLayout from "../layouts/MainLayout.astro";
+import GameCard from "../components/GameCard.astro";
+---
+
+<MainLayout title="Halloween Home" backgroundcolor="var(--white)">
+	<LandingpageHeader imgsrc="/public/webp/halloween/halloween_bg.webp" >
+
+	<div class="grid_5">
+		<div></div>
+		<div><img src="/public/webp/halloween/ghost.webp" alt=""></div>
+		<div>
+			<img src="/public/webp/halloween/halloween_logo.webp" alt="">
+			<br><br>
+			<Button variant="halloween" text="Play" href="https://matildemona.itch.io/halloween-home" target="_blank"></Button>
+			<div class="flex_arrow">
+				<div></div>
+				<div>
+					<a href="#main"><img class="arrowdown" src="public/svg/halloween_arrow.svg" alt="arrow down"></a>
+				</div>
+				<div></div>
+			</div>
+			
+			
+		</div>
+		<div><img src="/public/webp/halloween/tv.webp" alt=""></div>
+		<div></div>
+	</div>
+	</LandingpageHeader>
+	<main id="main">
+        <GameCard src1="public/webp/halloween/halloween1.webp" src2="public/webp/halloween/halloween2.webp" src3="public/webp/halloween/halloween3.webp" src4="public/webp/halloween/halloween4.webp" header="Halloween Home" text="Halloween Home is the ultimate halloween decoration simulator! As the spookiest time of the year approaches, it's up to you to deck out your home in the most frightfully fun decorations before the guests arrive. What decor will you choose to set the perfect Halloween mood?">
+			<div class="button_grid">
+				<div></div>
+				<div><Button variant="games" text="Play" href="https://matildemona.itch.io/halloween-home" target="_blank"></Button>
+				</div>
+				<div></div>
+			</div>
+        </GameCard>
+	</main>
+</MainLayout>
+
+<style>
+.grid_5{
+	display: grid;
+	grid-template-columns:  1fr 2fr 4fr 2fr 1fr;
+}
+.flex_arrow{
+	display: flex;
+	justify-content: center;
+}
+@media (max-width: 1100px){
+	.button_grid{
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;;
+	}
+	.grid_5{
+	display: grid;
+	grid-template-columns:  1fr 3fr 6fr 3fr 1fr;
+}
+}
+</style>

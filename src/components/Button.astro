@@ -1,8 +1,8 @@
 ---
-const { text, href, variant } = Astro.props;
+const { text, href, variant, target } = Astro.props;
 ---
 
-<a class={variant + " " + "knap"} href={href}>
+<a class={variant + " " + "knap"} href={href} target={target}}>
   {text}
 </a>
 
@@ -34,5 +34,52 @@ Skal tilføjes sådan: <Button text="knapText" href="LinkTilKnap" />
   .small{
     padding: 2px 8px 2px 8px;
     font-size: 1rem;
+  }
+  .games{
+    margin-top: 60px;
+    display: block;
+    background-color: var(--purple);
+    border-color: var(--purple);
+    color: var(--white);
+  }
+  .nekosake{
+    background-color: #FF99CF;
+    border-color: #FF99CF;
+    color: var(--white);
+  }
+  .caffeine{
+    background-color: #FF1744;
+    border-color: #FF1744;
+    color: var(--white);
+  }
+  .halloween{
+    background-color: #B08A6A;
+    border-color: #B08A6A;
+    color: var(--white);
+  }
+  
+  .nekosake:hover{
+    background-color: var(--white);
+    border-color: var(--white);
+    color: #FF99CF;
+  }
+  .caffeine:hover{
+    background-color:var(--white);;
+    border-color: var(--white);
+    color: #FF1744;
+  }
+  .halloween:hover{
+    background-color: var(--white);
+    border-color: var(--white);
+    color: #B08A6A;
+  }
+  @media (max-width: 1100px){
+    .nekosake, .caffeine, .halloween{
+      padding: 5px 30px 5px 30px;
+      font-size: 1.5rem;
+    }
+    .games{
+      margin-top: 0px;
+    }
   }
 </style>

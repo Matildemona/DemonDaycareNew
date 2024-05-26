@@ -1,15 +1,15 @@
 ---
-const {header, text, src1, src2, src3, src4} = Astro.props;
+const {header, text, src1, src2, src3, src4, alt} = Astro.props;
 ---
 <div class="card_flex">
     <div></div>
     <div class="flex_horizontal">
         <div class="flex_vertical">
-            <div><img src={src1} alt=""></div>
+            <div><img src={src1} alt={alt}></div>
             <div class="img_grid">
-                <div><img src={src2} alt=""></div>
-                <div><img src={src3} alt=""></div>
-                <div><img src={src4} alt=""></div>
+                <div><img src={src2} alt={alt}></div>
+                <div><img src={src3} alt={alt}></div>
+                <div><img src={src4} alt={alt}></div>
             </div>
         </div>
         <div class="text_grid">
